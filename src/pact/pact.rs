@@ -1,4 +1,4 @@
-use pact_consumer::prelude::*;
+// use pact_consumer::prelude::*;
 
 #[tokio::test]
 async fn a_service_consumer_side_of_a_pact_goes_a_little_something_like_this() {
