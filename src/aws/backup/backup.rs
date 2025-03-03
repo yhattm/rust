@@ -1,7 +1,8 @@
+use aws_config::BehaviorVersion;
 use aws_sdk_backup::{Client, Error};
 
 pub async fn list_backup_jobs() -> Result<(), Error> {
-    let config = aws_config::load_from_env().await;
+    let config = aws_config::load_defaults(BehaviorVersion::latest()).await;
     let client = Client::new(&config);
 
     let resp = client.list_backup_jobs().send().await?;
